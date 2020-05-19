@@ -1,1 +1,1 @@
-# moby-plex
+# Plex Media Server Docker for Windows
