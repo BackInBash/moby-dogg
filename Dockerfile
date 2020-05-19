@@ -14,4 +14,4 @@ RUN del /F /Q setup.exe
 EXPOSE 32400/tcp
 
 # Define the entrypoint
-CMD ["C:\Program Files (x86)\Plex\Plex Media Server\Plex Media Server.exe"]
+CMD ["C:\\Program Files (x86)\\Plex\\Plex Media Server\\Plex Media Server.exe"]
