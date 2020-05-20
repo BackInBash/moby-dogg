@@ -16,8 +16,6 @@ RUN Invoke-WebRequest -Method Get -Uri (([xml]((Invoke-WebRequest -UseBasicParsi
 
 WORKDIR /plex
 
-VOLUME c:\\PlexData
-
 COPY Bootstrap.ps1 /
 
 ENTRYPOINT ["powershell", "-ExecutionPolicy", "Unrestricted", "C:\\Bootstrap.ps1"]
