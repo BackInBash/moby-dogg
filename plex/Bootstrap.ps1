@@ -20,7 +20,7 @@ if ($MachineID -eq $null)
 		# We found the backup, restore it
 		Write-Output "[$(Get-Date)]: Found a backup and no machine ID, assuming this is a reinstalled container..."
 		# Wipe out some placeholder data, the backup should have all the needed info
-		Remove-Item "HKCU:\Software\Plex, Inc.\Plex Media Server" -Force
+		Remove-Item "HKCU:\Software\Plex, Inc.\Plex Media Server" -Force -ErrorAction SilentlyContinue
 		REG import 'C:\Users\ContainerAdministrator\AppData\Local\Plex Media Server\regbackup.reg'
 	}
 } else {

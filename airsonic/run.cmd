@@ -1,0 +1,1 @@
+docker run -d -p 8080:8080 --name airsonic --cpus=4 -m 4096 --restart=always -v F:\airsonic:"C:\airsonic" -v d:\#Musik:c:\media 648dcea93b8b

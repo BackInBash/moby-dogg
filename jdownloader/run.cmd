@@ -1,0 +1,1 @@
+docker run -d --name jdownloader --cpus=4 -m 2048 --restart=always -v F:\JDownloader:"C:\jdownloader" -v D:\_Downloads:C:\downloads\d -v E:\_Downloads:C:\downloads\e 50c242a7f8f7

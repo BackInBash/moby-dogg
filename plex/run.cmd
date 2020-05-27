@@ -1,0 +1,1 @@
+docker run -d -p 32400:32400 --name plexmediaserver --cpus=8 -m 8192 --net=nat --restart=always -v F:\Plex:"C:\Users\ContainerAdministrator\AppData\Local\Plex Media Server" -v d:\:c:\media\d -v e:\:c:\media\e b18e8cff61df
