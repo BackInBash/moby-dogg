@@ -1,7 +1,5 @@
-# Docker Container Windows
-
 ![dogger](header.png)
-
+# Docker Container Windows
 ## Plex Media Server
 
 ## Setup
