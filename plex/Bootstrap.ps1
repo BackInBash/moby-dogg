@@ -10,20 +10,20 @@ if ($MachineID -eq $null)
 	# There is no machine ID (clean container? plex never ran?) Look for the backup file
 	Write-Output "[$(Get-Date)]: No Plex Machine ID found!"
 	Write-Output "[$(Get-Date)]: Checking if there is a regbackup..."
-	if ((Test-Path C:\PlexData\regbackup.reg) -eq $true)
+	if ((Test-Path 'C:\Users\ContainerAdministrator\AppData\Local\Plex Media Server\regbackup.reg') -eq $true)
 	{
 		# We found the backup, restore it
 		Write-Output "[$(Get-Date)]: Found a backup and no machine ID, assuming this is a reinstalled container..."
 		# Wipe out some placeholder data, the backup should have all the needed info
 		Remove-Item "HKCU:\Software\Plex, Inc.\Plex Media Server" -Force
-		REG import C:\PlexData\regbackup.reg
+		REG import 'C:\Users\ContainerAdministrator\AppData\Local\Plex Media Server\regbackup.reg'
 	}
 } else {
 	# There is a machine ID, no need to restore anything. Make a backup to be sure
 	Write-Output "[$(Get-Date)]: Making a regbackup... "
-	Remove-Item C:\PlexData\regbackup.old -Force -ErrorAction SilentlyContinue
-	Rename-Item C:\PlexData\regbackup.reg C:\PlexData\regbackup.old -Force -ErrorAction SilentlyContinue
-	REG export 'HKCU\Software\Plex, Inc.\Plex Media Server' C:\PlexData\regbackup.reg
+	Remove-Item 'C:\Users\ContainerAdministrator\AppData\Local\Plex Media Server\regbackup.old' -Force -ErrorAction SilentlyContinue
+	Rename-Item 'C:\Users\ContainerAdministrator\AppData\Local\Plex Media Server\regbackup.reg' 'C:\Users\ContainerAdministrator\AppData\Local\Plex Media Server\regbackup.old' -Force -ErrorAction SilentlyContinue
+	REG export 'HKCU\Software\Plex, Inc.\Plex Media Server' 'C:\Users\ContainerAdministrator\AppData\Local\Plex Media Server\regbackup.reg'
 } 
    Write-Output "[$(Get-Date)]: Bootstrapping Plex Media Server.exe.. "
 
